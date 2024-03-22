@@ -49,7 +49,7 @@ app.get('/chats/:id/edit', async (req,res)=> {
     let chat= await Chat.findById(id);
     res.render('edit.ejs', { chat });
 });
-app.put('/chat/:id', async(req,res)=>{
+app.put('/chats/:id', async(req,res)=>{
 let { id }=req.params;
 let { mesg: newMsg }=req.body;
 let updateChat=await Chat.findByIdAndUpdate(
